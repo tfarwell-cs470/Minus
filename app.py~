@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Home page. Index link for all assignments
 @app.route('/')
 def home():
-    return redirect(url_for('static', filename='index.html'))
+    return redirect(url_for('static', filename='home.html'))
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
