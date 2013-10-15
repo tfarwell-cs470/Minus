@@ -1,15 +1,19 @@
-import os
-from flask import render_template, redirect, url_for
+from flask import Flask, redirect, render_template, url_for
+
+
 app = Flask(__name__)
 
-# Home page. Index link for all assignments
+
 @app.route('/')
 def index():
     return redirect(url_for('static', filename='index.html'))
 
-# @app.route('/assignment<num>')
-# def site(num):
-#     return render_template('assignment{assignment{0}.html'.format(num))
+
+@app.route('/site<num>')
+def site(num):
+    # Works for /site01, /site02, /site03, etc.
+    return render_template('site{0}.html'.format(num))
+
 
 if __name__ == '__main__':
-   
+    app.run(debug=True)
